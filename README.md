@@ -3,14 +3,15 @@
 Gecko codes for **Super Smash Bros. Melee (NTSC 1.02)**, built to work with
 **Slippi Dolphin**, including rollback netplay over direct connect.
 
-Each code is a plain `.txt` file you can paste into Dolphin's Gecko Codes tab.
+Each code is a plain `.txt` file in the [`codes`](codes) folder that you can
+paste into Dolphin's Gecko Codes tab.
 There's one code so far, and more will follow.
 
 ## Codes
 
 | Code | File | What it does | Status |
 |---|---|---|---|
-| Turbo Mode | [`TurboMode.txt`](TurboMode.txt) | Land a hit, then cancel your move into a different one | Beta |
+| Turbo Mode | [`codes/TurboMode.txt`](codes/TurboMode.txt) | Land a hit, then cancel your move into a different one | Beta |
 
 ---
 

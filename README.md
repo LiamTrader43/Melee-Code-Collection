@@ -5,13 +5,14 @@ Gecko codes for **Super Smash Bros. Melee (NTSC 1.02)**, built to work with
 
 Each code is a plain `.txt` file in the [`codes`](codes) folder that you can
 paste into Dolphin's Gecko Codes tab.
-There's one code so far, and more will follow.
+There are two codes so far, and more will follow.
 
 ## Codes
 
 | Code | File | What it does | Status |
 |---|---|---|---|
 | Turbo Mode | [`codes/TurboMode.txt`](codes/TurboMode.txt) | Land a hit, then cancel your move into a different one | Beta |
+| Hitstun Vision | [`codes/HitstunVision.txt`](codes/HitstunVision.txt) | The screen is black except while someone is in hitstun or has just been KO'd | Beta |
 
 ---
 
@@ -42,6 +43,35 @@ over rollback.
 
 The rules are based on how Akaneia's code actually behaves, not just its
 description. That includes some of its odd edge cases.
+
+---
+
+## Hitstun Vision
+
+The stage, fighters and effects are hidden behind a black screen. They only
+appear while a fighter is in hitstun, for a quarter of a second (15 frames)
+after the hitstun ends, and for a second and a half (90 frames) after a KO.
+
+- **Landing a hit lights up the screen.** It stays visible until the hit
+  fighter's hitstun ends, then goes dark 15 frames later.
+- **A KO lights up the screen for 90 frames,** so you see the blast. This
+  counts any KO, including self-destructs.
+- **After 30 seconds of darkness, you get a 90-frame look anyway.** If nobody
+  gets hit or KO'd for 30 seconds, the screen shows for 90 frames. Then it
+  goes dark, and the count starts again. The first count starts once the
+  fighters finish their entrance.
+- **The HUD is always visible.** Percentages, stocks, the timer and the pause
+  menu stay on screen the whole time.
+- **The P1–P4 and CPU tags over the fighters are hidden while it's dark,**
+  along with any name tags, so they can't give away anyone's position. They
+  come back whenever the screen does.
+- Shield hits and misses don't light anything up, because nobody goes into
+  hitstun.
+- A fighter who's off the edge of the screen still shows in their bubble,
+  since the bubble is part of the HUD.
+
+It only changes what's drawn, so it won't cause a desync online. Both players
+should still turn it on, so the match is fair.
 
 ---
 

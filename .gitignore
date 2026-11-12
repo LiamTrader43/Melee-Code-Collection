@@ -3,3 +3,6 @@ CLAUDE.md
 FINDINGS.md
 ppc_dis.py
 turbo_builder.py
+ppc_asm.py
+hitstun_vision_builder.py
+__pycache__/

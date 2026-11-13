@@ -49,26 +49,33 @@ description. That includes some of its odd edge cases.
 ## Hitstun Vision
 
 The stage, fighters and effects are hidden behind a black screen. They only
-appear while a fighter is in hitstun, for a quarter of a second (15 frames)
-after the hitstun ends, and for a second and a half (90 frames) after a KO.
+appear when someone gets hit, from a KO until two seconds (120 frames) after
+that player comes back, and for the first three seconds of the match.
 
 - **Landing a hit lights up the screen.** It stays visible until the hit
-  fighter's hitstun ends, then goes dark 15 frames later.
-- **A KO lights up the screen for 90 frames,** so you see the blast. This
-  counts any KO, including self-destructs.
-- **After 30 seconds of darkness, you get a 90-frame look anyway.** If nobody
-  gets hit or KO'd for 30 seconds, the screen shows for 90 frames. Then it
-  goes dark, and the count starts again. The first count starts once the
-  fighters finish their entrance.
+  fighter's hitstun ends, then goes dark 10 frames later. Any hit that does
+  damage counts, even with no hitstun (crouch cancels, armor, pummels, lasers,
+  hitting someone who's lying down).
+- **A KO lights up the screen until the player is back in action.** It stays
+  visible from the KO, through the respawn platform, until 120 frames after
+  they leave the platform. This counts any KO, including self-destructs. If
+  the KO knocks a player out of the match, it shows the blast plus 120 frames.
+  Nana getting KO'd on her own doesn't count.
+- **The match starts lit.** You can see the entrance and the first 180 frames
+  after it, so everyone's starting spot is known.
+- **After 30 seconds of darkness, you get a 180-frame look anyway.** If nobody
+  gets hit or KO'd for 30 seconds, the screen shows for 180 frames. Then it
+  goes dark, and the count starts again.
 - **The HUD is always visible.** Percentages, stocks, the timer and the pause
   menu stay on screen the whole time.
 - **The P1–P4 and CPU tags over the fighters are hidden while it's dark,**
   along with any name tags, so they can't give away anyone's position. They
   come back whenever the screen does.
-- Shield hits and misses don't light anything up, because nobody goes into
-  hitstun.
-- A fighter who's off the edge of the screen still shows in their bubble,
-  since the bubble is part of the HUD.
+- Shield hits, grabs and misses don't light anything up, because nobody takes
+  damage.
+- **The offscreen bubble is hidden while it's dark too.** A fighter knocked
+  off the edge of the screen doesn't show up in a bubble until the screen
+  comes back.
 
 It only changes what's drawn, so it won't cause a desync online. Both players
 should still turn it on, so the match is fair.
